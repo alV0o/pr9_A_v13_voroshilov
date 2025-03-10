@@ -19,7 +19,7 @@ class HouseholdProduct(var empName:String, var empPrice:Double, var empUnitsOfMe
         println("Цена с наценкой: ${newPrice}")
     }
 
-    fun TypeOfHHProduct(){ //определение подвида
+   fun TypeOfHHProduct(){ //определение подвида
         println("[1] - Косметика")
         println("[2] - Бытовая техника")
         println("[3] - Кухонная техника")
@@ -31,21 +31,29 @@ class HouseholdProduct(var empName:String, var empPrice:Double, var empUnitsOfMe
             1 -> {
                 secondTypeOfTovar = "Косметика"
                 markupForSecType = 0.5
+                newPrice += price*markupForSecType
+                GetInfo()
             }
 
             2 -> {
                 secondTypeOfTovar = "Бытовая техника"
                 markupForSecType = 0.2
+                newPrice += price*markupForSecType
+                GetInfo()
             }
 
             3 -> {
                 secondTypeOfTovar = "Кухонная техника"
                 markupForSecType = 0.3
+                newPrice += price*markupForSecType
+                GetInfo()
             }
 
             4 -> {
                 secondTypeOfTovar = "Сантехника"
                 markupForSecType = 0.7
+                newPrice += price*markupForSecType
+                GetInfo()
             }
 
             else -> {
@@ -55,9 +63,6 @@ class HouseholdProduct(var empName:String, var empPrice:Double, var empUnitsOfMe
             }
 
         }
-
-        newPrice += price*markupForSecType
-        GetInfo()
     }
 
     override fun PriceOfOneProduct(){
