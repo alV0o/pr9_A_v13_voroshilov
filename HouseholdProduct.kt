@@ -1,10 +1,10 @@
 import kotlin.reflect.typeOf
 
-class HouseholdProduct(var empName:String, var empPrice:Int, var empUnitsOfMeasuring:String, var empCount:Int): Tovar(empName, empPrice, empUnitsOfMeasuring, empCount){
+class HouseholdProduct(var empName:String, var empPrice:Double, var empUnitsOfMeasuring:String, var empCount:Int): Tovar(empName, empPrice, empUnitsOfMeasuring, empCount){
     override var typeOfTovar = "Бытовой"
     var secondTypeOfTovar = "" //подвид товара
     var markupForSecType = 0.0 //наценка за подвид
-    var newPrice = price!!.toDouble() //цена с наценкой
+    var newPrice = price //цена с наценкой
 
     override fun SetType() { //требуется т.к. вид товара уже указан
         println("Вид товара - ${typeOfTovar}")
@@ -61,7 +61,7 @@ class HouseholdProduct(var empName:String, var empPrice:Int, var empUnitsOfMeasu
     }
 
     override fun PriceOfOneProduct(){
-        println("Цена за 1 товар: ${String.format("%.2f",newPrice!!.toDouble()/count!!.toDouble())}")
+        println("Цена за 1 товар: ${String.format("%.2f",newPrice/count!!.toDouble())}")
     }
 
 
