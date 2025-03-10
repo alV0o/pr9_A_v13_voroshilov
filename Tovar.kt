@@ -66,29 +66,39 @@ open class Tovar(var name:String, var price:Double, var unitsOfMeasuring:String,
         val answer = readLine()!!.toInt()
 
         when{
-            (answer == 1) -> extraPrice+=0.5
-            (answer != 2) ->{
+            (answer == 1 || answer == 2) -> {
+                when(answer){
+                    1 ->extraPrice+=0.5
+                }
+
+                println("----------")
+
+                println("Введите расстояние между пунктами назначения")
+                val range = readLine()!!.toInt()
+                val defPrice = 1000
+
+                when {
+                    (range >= 10 && range < 50) -> {
+                        extraPrice += 0.2
+                        println("Доставка будет стоить: ${defPrice + defPrice*extraPrice}p")
+                    }
+                    (range >= 50 && range < 100) -> {
+                        extraPrice += 0.3
+                        println("Доставка будет стоить: ${defPrice + defPrice*extraPrice}p")
+                    }
+                    (range >= 100) -> {
+                        extraPrice += 0.5
+                        println("Доставка будет стоить: ${defPrice + defPrice*extraPrice}p")
+                    }
+                    else -> {
+                        println("Неверное расстояние")
+                    }
+                }
+            }
+            else ->{
                 println("Неверный вариант. Выберите заново")
                 Delivery()
             }
         }
-        println("----------")
-
-        println("Введите расстояние между пунктами назначения")
-        val range = readLine()!!.toInt()
-
-        when {
-            (range >= 10 && range < 50) -> extraPrice += 0.2
-            (range >= 50 && range < 100) -> extraPrice += 0.3
-            (range > 100) -> extraPrice += 0.5
-            else -> {
-                println("Неверное расстояние. Введите заново")
-                Delivery()
-            }
-        }
-
-        val defPrice = 1000
-
-        println("Доставка будет стоить: ${defPrice + defPrice*extraPrice}p")
     }
 }
