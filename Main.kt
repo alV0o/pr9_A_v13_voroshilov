@@ -1,7 +1,7 @@
 fun main(){
     try{
         println("Введите название, Введите цену, Введите единицу измерения, Введите количество товаров")
-        val product1 = GroceryProduct(readLine()!!.toString(), readLine()!!.toInt(), readLine()!!.toString(), readLine()!!.toInt())
+        val product1 = GroceryProduct(readLine()!!.toString(), readLine()!!.toDouble(), readLine()!!.toString(), readLine()!!.toInt())
 
         when{
             (product1.price < 0) -> println("Неверная цена")
@@ -28,7 +28,7 @@ fun main(){
         println("---------------")
 
         println("Введите название, Введите цену, Введите единицу измерения, Введите количество товаров")
-        val product2 = HouseholdProduct(readLine()!!.toString(), readLine()!!.toInt(), readLine()!!.toString(), readLine()!!.toInt())
+        val product2 = HouseholdProduct(readLine()!!.toString(), readLine()!!.toDouble(), readLine()!!.toString(), readLine()!!.toInt())
 
         when{
             (product2.price < 0) -> println("Неверная цена")
@@ -44,7 +44,7 @@ fun main(){
         println("----------------")
 
         println("Введите название, Введите цену, Введите единицу измерения, Введите количество товаров")
-        val product3 = Tovar(readLine()!!.toString(), readLine()!!.toInt(), readLine()!!.toString(), readLine()!!.toInt())
+        val product3 = Tovar(readLine()!!.toString(), readLine()!!.toDouble(), readLine()!!.toString(), readLine()!!.toInt())
 
         when{
             (product3.price < 0) -> println("Неверная цена")
