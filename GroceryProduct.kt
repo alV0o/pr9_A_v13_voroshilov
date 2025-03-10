@@ -1,4 +1,4 @@
-class GroceryProduct(var empName:String, var empPrice:Int, var empUnitsOfMeasuring:String, var empCount:Int): Tovar(empName, empPrice, empUnitsOfMeasuring, empCount) {
+class GroceryProduct(var empName:String, var empPrice:Double, var empUnitsOfMeasuring:String, var empCount:Int): Tovar(empName, empPrice, empUnitsOfMeasuring, empCount) {
     override var typeOfTovar = "Продуктовый"
 
     var dayOfManufacture = 0 //день изготовления (одного месяца)
