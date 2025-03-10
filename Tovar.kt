@@ -1,4 +1,4 @@
-open class Tovar(var name:String, var price:Int, var unitsOfMeasuring:String, var count:Int) {
+open class Tovar(var name:String, var price:Double, var unitsOfMeasuring:String, var count:Int) {
     open var typeOfTovar = ""
 
     open fun SetType(){
@@ -32,7 +32,7 @@ open class Tovar(var name:String, var price:Int, var unitsOfMeasuring:String, va
     }
 
     open fun PriceOfOneProduct(){
-        println("Цена за 1 товар: ${String.format("%.2f", price!!.toDouble()/count!!.toDouble())}")
+        println("Цена за 1 товар: ${String.format("%.2f", price/count!!.toDouble())}")
     }
 
     fun CountBoxes(){
