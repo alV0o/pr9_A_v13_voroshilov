@@ -12,6 +12,7 @@ class HouseholdProduct(var empName:String, var empPrice:Int, var empUnitsOfMeasu
 
     override fun GetInfo(){
         println("Вид товара: ${typeOfTovar}")
+        println("Подвид товара: ${secondTypeOfTovar}")
         println("Название товара: ${name}")
         println("Единицы измерения: ${unitsOfMeasuring}")
         println("Количество: ${count}")
