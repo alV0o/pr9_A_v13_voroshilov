@@ -43,14 +43,16 @@ open class Tovar(var name:String, var price:Double, var unitsOfMeasuring:String,
                 println("Неверный объем. Введите заново")
                 CountBoxes()
             }
-        }
-        val volumeBox = 500
-
-        when{
-            (volumeTovar>volumeBox) -> println("Потребуется ${count} индивидуальных коробок")
-            else->{
-                val countInOneBox = Math.floor(volumeBox/volumeTovar!!.toDouble())//сколько
-                println("Потребуется ${Math.ceil(count/countInOneBox)} стандартных коробок")
+            else -> {
+                val volumeBox = 500
+                
+                when{
+                    (volumeTovar>volumeBox) -> println("Потребуется ${count} индивидуальных коробок")
+                    else->{
+                        val countInOneBox = Math.floor(volumeBox/volumeTovar!!.toDouble())//сколько
+                        println("Потребуется ${Math.ceil(count/countInOneBox)} стандартных коробок")
+                    }
+                }
             }
         }
     }
